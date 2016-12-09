@@ -3,16 +3,23 @@ initialize_calendar = function() {
   $('.calendar').each(function(){
     var calendar = $(this);
     calendar.fullCalendar({
+      businessHours: {
+        dow:[1,2,3,4,5],
+        start:'08:00',
+        end:'18:00'
+      },
+      firstDay:1, 
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'agendaDay,agendaWeek,month'
       },
       selectable: true,
       selectHelper: true,
       editable: true,
       eventLimit: true,
       events: '/events.json',
+      defaultView: 'agendaDay', 
 
       select: function(start, end) {
         $.getScript('/events/new', function() {
