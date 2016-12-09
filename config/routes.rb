@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 	resources :events, :users
+ 	resources :events, :users, :clients, :projects 
  	root 'welcome#calendar' 
  	get 'sign_in' => 'sessions#new', as: :sign_in
     post 'sign_in' => 'sessions#create'
