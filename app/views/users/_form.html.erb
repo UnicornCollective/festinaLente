@@ -8,7 +8,7 @@
 
 <%=simple_form_for @user do |f|%>
     <%= f.input :full_name%>
- <div class="form-group">
+    <div class="form-group">
         <%= f.label :role %>
         <%= f.collection_select :role, User::ROLE, :to_s, :to_s, :include_blank => true%>
     </div>
