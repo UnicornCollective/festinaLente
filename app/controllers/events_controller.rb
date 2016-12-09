@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_action :sign_in
 
 
-
   def index
     @events = Event.where(start: params[:start]..params[:end])
   end
