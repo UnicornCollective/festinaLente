@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209043849) do
+ActiveRecord::Schema.define(version: 20161211031952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,13 +34,17 @@ ActiveRecord::Schema.define(version: 20161209043849) do
     t.datetime "start"
     t.datetime "end"
     t.string   "phase"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.text     "description"
     t.string   "title"
     t.string   "color"
     t.integer  "project_id"
+    t.float    "duration"
+    t.datetime "duration_dt"
+    t.float    "duration_hours"
+    t.float    "duration_minutes"
     t.index ["project_id"], name: "index_events_on_project_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
