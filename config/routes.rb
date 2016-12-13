@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
- 	resources :events, :users, :clients, :projects 
+
+	namespace :admin do
+		resources :clients, :projects
+	end
+
+ 	resources :events, :users
  	root 'welcome#calendar' 
  	get 'user_calendar' => 'events#user_calendar'
  	get 'sign_in' => 'sessions#new', as: :sign_in

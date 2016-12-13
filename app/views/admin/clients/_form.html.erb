@@ -1,0 +1,31 @@
+<%= simple_form_for @client, remote: true do |f| %>
+  <div class="form-inputs">
+    <div class = "form-group">
+       <%= f.input :last_name %>
+    </div>
+      <div class = "form-group">
+       <%= f.input :first_name %>
+    </div>
+      <div class = "form-group">
+       <%= f.input :address1 %>
+       <%= f.input :address2 %>
+    </div>
+   	<%= f.input :city %>
+   	<%= f.input :state %>
+   	<%= f.input :zip %>
+    <%= f.input :mobile_phone %>
+    <%= f.input :work_phone %>
+    <%= f.input :email %>
+     
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+      <%= link_to 'Delete', 
+                  event, 
+                  method: :delete, 
+                  class: 'btn btn-danger', 
+                  data: { confirm: 'Are you sure?' }, 
+                  remote: true unless @event.new_record? %>
+    </div>
+<% end %>
