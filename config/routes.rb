@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
  	resources :events, :users, :clients, :projects 
  	root 'welcome#calendar' 
- 	get 'user_calendar' => 'events#user_calendar'
  	get 'sign_in' => 'sessions#new', as: :sign_in
     post 'sign_in' => 'sessions#create'
     delete 'sign_in' => 'sessions#delete', as: :end_session

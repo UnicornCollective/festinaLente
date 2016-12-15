@@ -24,18 +24,12 @@ class EventsController < ApplicationController
   end
 
   def update
-
     @event.update(event_params)
   end
 
   def destroy
     @event.destroy
   end
-
-  def user_calendar
-    @events = @current_user.events
-  end
-
 
   private
     def set_event
@@ -44,7 +38,7 @@ class EventsController < ApplicationController
 
 
     def event_params
-      params.require(:event).permit(:title, :date_range, :start, :end, :color, :user_id, :phase, :description, :project_id, :duration, :duration_minutes, :duration_hours, :duration_dt)
+      params.require(:event).permit(:title, :date_range, :start, :end, :color, :user_id, :phase, :description, :project_id)
     end
 
    def sign_in
