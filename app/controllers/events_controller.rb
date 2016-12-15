@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
 
   def index
-    @events = Event.where(start: params[:start]..params[:end])
+    @events = @current_user.events
   end
 
   def show
